@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayalaseema Dhum Restaurant | Heritage Kitchen & Woodfire Dum</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Playfair Display, Plus Jakarta Sans, Share Tech Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Custom Theme Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            earth: {
+              950: '#120F0D',
+              900: '#191512',
+              850: '#211C18',
+              800: '#2A2420',
+              700: '#423933',
+              600: '#685950',
+              300: '#D5C7BC',
+              200: '#E8DFD8',
+              100: '#F5EFEB',
+              50: '#FAF7F2'
+            },
+            terracotta: {
+              600: '#A33311',
+              500: '#C84B23',
+              400: '#DE643C',
+              100: '#FBECE8'
+            },
+            brass: {
+              500: '#C59B27',
+              400: '#D9AF3D',
+              300: '#EAC763',
+              100: '#FBF5E4'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Share Tech Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #120F0D;
+      color: #E8DFD8;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .font-editorial {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Custom boutique scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #120F0D;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #423933;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C84B23;
+    }
+
+    /* Subtle paper texture overlay */
+    .bg-grain {
+      background-image: radial-gradient(rgba(200, 75, 35, 0.05) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* Standard Indian Dietary Indicators */
+    .diet-badge-veg {
+      width: 15px;
+      height: 15px;
+      border: 1.5px solid #15803d;
+      padding: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      background: rgba(21, 128, 61, 0.08);
+      flex-shrink: 0;
+    }
+    .diet-badge-veg-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #15803d;
+      border-radius: 50%;
+    }
+    .diet-badge-nonveg {
+      width: 15px;
+      height: 15px;
+      border: 1.5px solid #b91c1c;
+      padding: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      background: rgba(185, 28, 28, 0.08);
+      flex-shrink: 0;
+    }
+    .diet-badge-nonveg-triangle {
+      width: 0;
+      height: 0;
+      border-left: 3.5px solid transparent;
+      border-right: 3.5px solid transparent;
+      border-bottom: 6px solid #b91c1c;
+    }
+
+    /* Dedicated 80mm Thermal Receipt Print Rules */
+    @media print {
+      body * {
+        visibility: hidden !important;
+      }
+      #printableThermalReceipt, #printableThermalReceipt * {
+        visibility: visible !important;
+      }
+      #printableThermalReceipt {
+        position: fixed !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 78mm !important;
+        max-width: 80mm !important;
+        margin: 0 auto !important;
+        padding: 4mm !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-family: 'Share Tech Mono', monospace !important;
+        font-size: 10.5px !important;
+        line-height: 1.3 !important;
+        box-shadow: none !important;
+        border: none !important;
+        display: block !important;
+        z-index: 999999 !important;
+      }
+    }
+  </style>
+</head>
+<body class="selection:bg-terracotta-500 selection:text-white bg-grain min-h-screen flex flex-col justify-between">
+
+  <!-- 3-SECOND ELEGANT ENTRANCE SPLASH SCREEN -->
+  <div id="splashScreen" class="fixed inset-0 z-[120] flex flex-col items-center justify-center bg-earth-950 transition-all duration-700">
+    <div class="relative z-10 text-center px-6 max-w-md mx-auto flex flex-col items-center">
+      
+      <!-- Artisanal Monogram Emblem -->
+      <div class="w-20 h-20 rounded-full border border-brass-500/40 bg-earth-900 flex items-center justify-center mb-6 shadow-2xl relative">
+        <div class="absolute inset-1 rounded-full border border-brass-500/15"></div>
+        <span class="font-editorial text-2xl font-bold tracking-widest text-brass-400">RD</span>
+      </div>
+
+      <!-- Restaurant Title & Subtitle in English -->
+      <p class="text-[11px] uppercase tracking-[0.28em] text-brass-500/80 font-medium mb-1.5">
+        Woodfire Kitchen • Since 1984
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-editorial font-bold text-earth-50 tracking-tight leading-tight">
+        Rayalaseema Dhum
+      </h1>
+      <p class="text-xs uppercase tracking-[0.2em] text-earth-300 font-light mt-1">
+        Authentic Heritage Kitchen & Dhum Biryanis
+      </p>
+
+      <div class="h-px w-24 bg-gradient-to-r from-transparent via-terracotta-500 to-transparent my-5"></div>
+
+      <!-- 3-Second Loading Line -->
+      <div class="w-48 h-[2px] bg-earth-800 rounded-full overflow-hidden">
+        <div id="splashProgress" class="h-full bg-gradient-to-r from-brass-500 via-terracotta-500 to-brass-400 w-0 transition-all duration-[3000ms] ease-out"></div>
+      </div>
+
+      <button onclick="dismissSplashScreen()" class="mt-6 text-[11px] tracking-wider uppercase text-earth-600 hover:text-earth-300 transition flex items-center gap-1.5 group">
+        <span>Skip to Menu</span>
+        <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- SUBTLE KITCHEN TIME SIMULATOR (Top Bar for easy testing) -->
+  <div class="bg-earth-900/90 border-b border-earth-800 text-[11px] py-1.5 px-4 sticky top-0 z-40 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <!-- Live Clock & Current Slot Pill -->
+      <div class="flex items-center gap-3">
+        <span class="flex items-center gap-1.5 font-mono text-brass-400 font-semibold bg-earth-950 px-2 py-0.5 rounded border border-earth-800">
+          <i data-lucide="clock" class="w-3 h-3 text-brass-500 animate-pulse"></i>
+          <span id="simulatorClockDisplay">--:--:--</span>
+        </span>
+        <span id="simulatorSessionBadge" class="px-2.5 py-0.5 rounded-full font-medium tracking-wide border text-[10px] uppercase">
+          Determining Kitchen Session...
+        </span>
+      </div>
+
+      <!-- Quick Session Simulator Buttons -->
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <span class="text-earth-600 hidden md:inline text-[10px] uppercase tracking-wider font-medium">Test Time Slot:</span>
+        <button onclick="setSimulatedHour(8, 30)" class="sim-btn px-2 py-0.5 rounded bg-earth-850 hover:bg-earth-800 text-earth-300 border border-earth-700/60 transition" title="08:30 AM (Morning Tiffins)">
+          Tiffins (8:30 AM)
+        </button>
+        <button onclick="setSimulatedHour(13, 15)" class="sim-btn px-2 py-0.5 rounded bg-earth-850 hover:bg-earth-800 text-earth-300 border border-earth-700/60 transition" title="01:15 PM (Lunch Feast)">
+          Lunch (1:15 PM)
+        </button>
+        <button onclick="setSimulatedHour(20, 0)" class="sim-btn px-2 py-0.5 rounded bg-earth-850 hover:bg-earth-800 text-earth-300 border border-earth-700/60 transition" title="08:00 PM (Tiffin & Dinner)">
+          Tiffin + Dinner (8 PM)
+        </button>
+        <button onclick="setSimulatedHour(2, 0)" class="sim-btn px-2 py-0.5 rounded bg-red-950/60 hover:bg-red-900/60 text-red-300 border border-red-800/60 transition" title="02:00 AM (Restaurant Closed)">
+          Closed (2 AM)
+        </button>
+        <button onclick="resetToLiveTime()" id="liveResetBtn" class="px-2 py-0.5 rounded bg-brass-500 text-earth-950 font-bold hover:bg-brass-400 transition ml-1">
+          Live Clock
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION HEADER -->
+  <header class="border-b border-earth-800/80 bg-earth-950/80 backdrop-blur-md sticky top-8 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo Branding -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 rounded-full border border-brass-500/30 bg-earth-900 flex items-center justify-center group-hover:border-terracotta-500 transition-colors">
+          <i data-lucide="flame" class="w-5 h-5 text-terracotta-500 group-hover:scale-110 transition-transform"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-editorial text-lg sm:text-xl font-bold tracking-tight text-earth-50 leading-tight">
+            Rayalaseema Dhum
+          </span>
+          <span class="text-[10px] tracking-[0.2em] uppercase text-brass-400 font-medium">
+            Heritage Dining & Kitchen
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-wider font-medium text-earth-300">
+        <a href="#menu-catalog" class="hover:text-brass-400 transition">Active Menu</a>
+        <a href="#culinary-philosophy" class="hover:text-brass-400 transition">Philosophy</a>
+        <a href="#kitchen-hours" class="hover:text-brass-400 transition">Daily Schedule</a>
+        <a href="#reserve-table" class="hover:text-brass-400 transition">Reserve Table</a>
+      </nav>
+
+      <!-- Dining Tray Cart Trigger -->
+      <div class="flex items-center gap-3">
+        <button onclick="openCartDrawer()" class="flex items-center gap-2.5 bg-earth-850 hover:bg-earth-800 border border-earth-700/80 px-4 py-2 rounded-full text-xs font-semibold text-earth-100 transition shadow-sm hover:border-brass-500/50">
+          <i data-lucide="shopping-bag" class="w-4 h-4 text-brass-400"></i>
+          <span class="hidden sm:inline">Dining Tray</span>
+          <span id="navCartCount" class="w-5 h-5 rounded-full bg-terracotta-500 text-white text-[10px] font-bold flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- RESTAURANT CLOSED BANNER (Rendered between 11:00 PM and 6:00 AM) -->
+  <section id="closedNoticeBanner" class="hidden bg-earth-900 border-b border-terracotta-600/40 py-4 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5 text-center md:text-left">
+        <div class="w-10 h-10 rounded-full bg-terracotta-600/20 text-terracotta-400 flex items-center justify-center shrink-0 border border-terracotta-600/30">
+          <i data-lucide="moon" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 justify-center md:justify-start">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-terracotta-400 bg-earth-950 px-2 py-0.5 rounded border border-earth-800">Kitchen Closed</span>
+            <span class="text-xs text-earth-300 font-medium">Nightly Wood Rest (11:00 PM – 06:00 AM)</span>
+          </div>
+          <p class="text-xs text-earth-400 mt-0.5">
+            Our wood stoves are banked for the night. You may review the menu below, but online ordering and takeaway tray checkouts resume at 06:00 AM.
+          </p>
+        </div>
+      </div>
+      
+      <a href="#kitchen-hours" class="shrink-0 text-xs text-brass-400 hover:text-brass-300 border border-brass-500/30 bg-earth-950 px-3.5 py-1.5 rounded-lg flex items-center gap-1.5 transition">
+        <span>View Kitchen Hours</span>
+        <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- EDITORIAL HERO SECTION -->
+  <section id="hero" class="relative py-16 sm:py-24 border-b border-earth-800/60 overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-earth-900 border border-earth-800 text-brass-400 text-xs tracking-wider uppercase mb-6 font-medium">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brass-500"></i>
+        <span>Hand-Pounded Spices • Babool Wood Charcoal • Pure Country Ghee</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-editorial font-bold text-earth-50 tracking-tight leading-[1.15] mb-5">
+        Untamed Spices.<br/>
+        <span class="italic font-normal text-terracotta-400">Slow Woodfire Dhum.</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-earth-300 text-sm sm:text-base leading-relaxed mb-10 font-normal">
+        Steeped in the historic culinary legacy of Kurnool, Kadapa, and Anantapur. From dawn’s crackling <span class="text-brass-400 font-medium">Kurnool Uggani Bajji</span> and garlic-seared <span class="text-brass-400 font-medium">Ghee Erra Karam Dosa</span> to slow-sealed copper deghs of <span class="text-brass-400 font-medium">Rayalaseema Kodi Dhum Biryani</span>.
+      </p>
+
+      <!-- Key Artisan Badges -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto text-left">
+        <div class="p-3.5 rounded-xl bg-earth-900/60 border border-earth-800/80">
+          <div class="text-[10px] uppercase tracking-wider text-brass-400 font-semibold">Firewood Tradition</div>
+          <div class="text-xs text-earth-200 mt-1 font-medium">Sealed copper deghs cooked on babool coals</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-earth-900/60 border border-earth-800/80">
+          <div class="text-[10px] uppercase tracking-wider text-brass-400 font-semibold">Stone-Pounded</div>
+          <div class="text-xs text-earth-200 mt-1 font-medium">Kadapa red chillies & roasted gram masalas</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-earth-900/60 border border-earth-800/80">
+          <div class="text-[10px] uppercase tracking-wider text-brass-400 font-semibold">Time-Filtered</div>
+          <div class="text-xs text-earth-200 mt-1 font-medium">4 distinct kitchen phases for true freshness</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-earth-900/60 border border-earth-800/80">
+          <div class="text-[10px] uppercase tracking-wider text-brass-400 font-semibold">Native Ghee</div>
+          <div class="text-xs text-earth-200 mt-1 font-medium">A2 bilona cow ghee for fragrant roast dosas</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN MENU CONTAINER -->
+  <main id="menu-catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1 w-full">
+    
+    <!-- Editorial Active Session Ribbon -->
+    <div class="bg-earth-900 border border-earth-800 rounded-2xl p-6 sm:p-8 mb-8 relative overflow-hidden">
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-2.5 mb-2">
+            <span id="sessionTagPill" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-terracotta-500 text-white">
+              Live Session
+            </span>
+            <span id="sessionTimeWindowText" class="text-xs font-mono text-brass-400 font-semibold">
+              --:-- – --:--
+            </span>
+          </div>
+          <h2 id="sessionHeadlineTitle" class="text-2xl sm:text-3xl font-editorial font-bold text-earth-50">
+            Available Kitchen Preparations
+          </h2>
+          <p id="sessionHeadlineDescription" class="text-xs sm:text-sm text-earth-300 mt-1 max-w-2xl leading-relaxed">
+            Every dish listed is freshly prepared during this strict dining window.
+          </p>
+        </div>
+
+        <div class="bg-earth-950/80 border border-earth-800 p-4 rounded-xl shrink-0 text-left md:text-right">
+          <div class="text-[10px] uppercase tracking-wider text-earth-400 font-semibold">Session Status</div>
+          <div id="sessionStatusPill" class="text-xs font-mono font-bold text-brass-400 mt-0.5">
+            Active Kitchen Window
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTER BAR: Search, Category Tabs, and Pure Veg / Non-Veg Toggles -->
+    <div class="space-y-4 mb-8">
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+        
+        <!-- Search Field -->
+        <div class="relative w-full sm:w-80">
+          <i data-lucide="search" class="w-4 h-4 text-earth-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+          <input 
+            type="text" 
+            id="dishSearchQuery" 
+            oninput="handleMenuSearch(this.value)" 
+            placeholder="Search by dish name, spice, or ingredient..." 
+            class="w-full bg-earth-900 border border-earth-800 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-earth-100 placeholder-earth-600 focus:outline-none focus:border-terracotta-500 transition"
+          />
+        </div>
+
+        <!-- Category Pills (Dynamically populated based on active session) -->
+        <div id="categoryTabsRow" class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+
+      <!-- Secondary Dietary Filter & Item Counter -->
+      <div class="flex items-center justify-between border-t border-earth-800/80 pt-3 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="text-earth-400 font-medium">Dietary:</span>
+          <button onclick="setDietaryFilter('ALL')" id="filterAllBtn" class="px-3 py-1 rounded-lg text-xs font-medium bg-earth-800 text-earth-100 transition">
+            All Dishes
+          </button>
+          <button onclick="setDietaryFilter('VEG')" id="filterVegBtn" class="px-3 py-1 rounded-lg text-xs font-medium bg-earth-900 text-earth-300 hover:bg-earth-850 transition flex items-center gap-1.5">
+            <span class="diet-badge-veg"><span class="diet-badge-veg-dot"></span></span> Pure Veg
+          </button>
+          <button onclick="setDietaryFilter('NON_VEG')" id="filterNonVegBtn" class="px-3 py-1 rounded-lg text-xs font-medium bg-earth-900 text-earth-300 hover:bg-earth-850 transition flex items-center gap-1.5">
+            <span class="diet-badge-nonveg"><span class="diet-badge-nonveg-triangle"></span></span> Non-Veg
+          </button>
+        </div>
+
+        <div class="text-earth-400">
+          Showing <span id="dishCountDisplay" class="font-bold text-earth-100">0</span> specialties
+        </div>
+      </div>
+    </div>
+
+    <!-- DISH CARDS GRID -->
+    <div id="dishCatalogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Dish cards rendered here -->
+    </div>
+
+    <!-- Empty State Message -->
+    <div id="menuEmptyNotice" class="hidden py-16 text-center border border-dashed border-earth-800 rounded-2xl">
+      <div class="w-12 h-12 rounded-full bg-earth-900 text-earth-400 flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="utensils" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-base font-editorial font-bold text-earth-100">No matching dishes found</h3>
+      <p class="text-xs text-earth-400 mt-1 max-w-sm mx-auto">
+        No preparations matched your search within this session window. Try resetting filters.
+      </p>
+      <button onclick="resetMenuFilters()" class="mt-4 px-4 py-2 bg-earth-850 hover:bg-earth-800 text-earth-200 rounded-xl text-xs font-medium transition">
+        Reset All Filters
+      </button>
+    </div>
+
+  </main>
+
+  <!-- CULINARY PHILOSOPHY & HERITAGE SECTION -->
+  <section id="culinary-philosophy" class="bg-earth-900/60 border-t border-earth-800 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-[11px] uppercase tracking-[0.25em] text-brass-400 font-semibold">The Kitchen Discipline</span>
+        <h2 class="text-3xl sm:text-4xl font-editorial font-bold text-earth-50 mt-2 mb-4 leading-tight">
+          Why Rayalaseema Cooking Cannot Be Rushed
+        </h2>
+        <p class="text-xs sm:text-sm text-earth-300 leading-relaxed mb-4">
+          The rugged hinterlands of Rayalaseema demand culinary resilience. The cuisine balances high heat from sun-cured Kurnool red chillies with the soothing density of finger millet (Ragi) and rich A2 cultured butter.
+        </p>
+        <p class="text-xs sm:text-sm text-earth-400 leading-relaxed mb-6">
+          Unlike modern gas stovetops, our deghs sit over slow tamarind and babool coals. The aroma of slow-charred country chicken broth and roasted ground spices is woven directly into every grain of rice.
+        </p>
+
+        <div class="border-l-2 border-brass-500 pl-4 py-1 italic font-editorial text-earth-200 text-sm">
+          "If the garlic is not crushed with mortar and pestle right before the ghee hits the pan, it is simply not Rayalaseema Erra Karam."
+        </div>
+      </div>
+
+      <!-- Provenance Highlights -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-earth-950 p-5 rounded-2xl border border-earth-800">
+          <div class="w-8 h-8 rounded-lg bg-terracotta-500/10 text-terracotta-400 flex items-center justify-center mb-3">
+            <i data-lucide="flame" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-sm font-editorial font-bold text-earth-100">Woodfire Dhum Sealing</h3>
+          <p class="text-xs text-earth-400 mt-1 leading-relaxed">Pounded dough locks the steam within heavy hand-beaten copper pots, ensuring tender braised cuts.</p>
+        </div>
+
+        <div class="bg-earth-950 p-5 rounded-2xl border border-earth-800">
+          <div class="w-8 h-8 rounded-lg bg-brass-500/10 text-brass-400 flex items-center justify-center mb-3">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-sm font-editorial font-bold text-earth-100">Kurnool Erra Karam</h3>
+          <p class="text-xs text-earth-400 mt-1 leading-relaxed">Stone-ground Kadapa chillies, whole garlic pods, roasted cumin and sea salt ground fresh every dawn.</p>
+        </div>
+
+        <div class="bg-earth-950 p-5 rounded-2xl border border-earth-800">
+          <div class="w-8 h-8 rounded-lg bg-brass-500/10 text-brass-400 flex items-center justify-center mb-3">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-sm font-editorial font-bold text-earth-100">Zero Commercial Powders</h3>
+          <p class="text-xs text-earth-400 mt-1 leading-relaxed">We reject artificial coloring agents and bottled essences. Rich red hues stem purely from sun-dried chillies.</p>
+        </div>
+
+        <div class="bg-earth-950 p-5 rounded-2xl border border-earth-800">
+          <div class="w-8 h-8 rounded-lg bg-terracotta-500/10 text-terracotta-400 flex items-center justify-center mb-3">
+            <i data-lucide="coffee" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-sm font-editorial font-bold text-earth-100">Chikmagalur Filter Kaapi</h3>
+          <p class="text-xs text-earth-400 mt-1 leading-relaxed">Served in authentic brass davarah glasses with thick farm milk and first-drip chicory decoction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KITCHEN HOURS & DINING SCHEDULE -->
+  <section id="kitchen-hours" class="border-t border-earth-800 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-[11px] uppercase tracking-[0.25em] text-brass-400 font-semibold">Service Timeline</span>
+        <h2 class="text-3xl font-editorial font-bold text-earth-50 mt-1">Four-Phase Kitchen Schedule</h2>
+        <p class="text-xs sm:text-sm text-earth-400 mt-2">
+          To maintain strict freshness, our firewood stoves transition through four distinct preparation cycles daily.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Phase 1 -->
+        <div id="scheduleCardTiffin" class="p-6 rounded-2xl bg-earth-900 border border-earth-800 transition">
+          <div class="flex items-center justify-between text-brass-400 mb-3">
+            <span class="text-[10px] uppercase font-bold tracking-wider">Phase 01</span>
+            <i data-lucide="sunrise" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-editorial font-bold text-earth-100">Morning Tiffins</h3>
+          <div class="font-mono text-xs text-brass-400 font-bold my-1.5">06:00 AM – 11:00 AM</div>
+          <p class="text-xs text-earth-400 leading-relaxed">
+            Strictly dedicated to morning breakfast specials: Uggani Bajji, Ghee Erra Karam Dosa, Pesarattu Upma, and Thatte Idlis.
+          </p>
+        </div>
+
+        <!-- Phase 2 -->
+        <div id="scheduleCardLunch" class="p-6 rounded-2xl bg-earth-900 border border-earth-800 transition">
+          <div class="flex items-center justify-between text-terracotta-400 mb-3">
+            <span class="text-[10px] uppercase font-bold tracking-wider">Phase 02</span>
+            <i data-lucide="sun" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-editorial font-bold text-earth-100">Afternoon Lunch</h3>
+          <div class="font-mono text-xs text-terracotta-400 font-bold my-1.5">11:00 AM – 05:00 PM</div>
+          <p class="text-xs text-earth-400 leading-relaxed">
+            Full feast menu: Rayalaseema Kodi Dhum Biryani, Mutton Biryani, Ragi Sangati with Natukodi Pulusu & Royal Meals.
+          </p>
+        </div>
+
+        <!-- Phase 3 -->
+        <div id="scheduleCardDinner" class="p-6 rounded-2xl bg-earth-900 border border-earth-800 transition">
+          <div class="flex items-center justify-between text-brass-300 mb-3">
+            <span class="text-[10px] uppercase font-bold tracking-wider">Phase 03</span>
+            <i data-lucide="moon" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-editorial font-bold text-earth-100">Tiffin & Dinner</h3>
+          <div class="font-mono text-xs text-brass-300 font-bold my-1.5">05:00 PM – 11:00 PM</div>
+          <p class="text-xs text-earth-400 leading-relaxed">
+            Both evening Tiffins (Dosas, Uggani) and full Dinner feasts (Biryanis, Parotta Salna, and Curries) are active simultaneously.
+          </p>
+        </div>
+
+        <!-- Phase 4 -->
+        <div id="scheduleCardClosed" class="p-6 rounded-2xl bg-earth-950 border border-earth-800 transition">
+          <div class="flex items-center justify-between text-red-400 mb-3">
+            <span class="text-[10px] uppercase font-bold tracking-wider">Phase 04</span>
+            <i data-lucide="bell-off" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-editorial font-bold text-earth-100">Kitchen Closed</h3>
+          <div class="font-mono text-xs text-red-400 font-bold my-1.5">11:00 PM – 06:00 AM</div>
+          <p class="text-xs text-earth-400 leading-relaxed">
+            Stoves rest for overnight coal banking. Digital menu browsing is enabled, with online ordering reopening at 06:00 AM.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE RESERVATION & PATRON WORDS -->
+  <section id="reserve-table" class="bg-earth-900/40 border-t border-earth-800 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      
+      <!-- Reserve Form -->
+      <div class="bg-earth-900 p-6 sm:p-8 rounded-2xl border border-earth-800 shadow-xl">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-brass-400 font-semibold">Hospitality Desk</span>
+        <h3 class="text-2xl font-editorial font-bold text-earth-50 mt-1 mb-2">Book a Dining Table</h3>
+        <p class="text-xs text-earth-400 mb-6">
+          Reserve your table in advance for traditional banana leaf seating and copper degh service.
+        </p>
+
+        <form onsubmit="handleReservationSubmit(event)" class="space-y-3.5">
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-earth-300 font-medium mb-1">Guest Name</label>
+            <input type="text" required placeholder="Srikanth Reddy" class="w-full bg-earth-950 border border-earth-800 rounded-xl px-3.5 py-2 text-xs text-earth-100 placeholder-earth-600 focus:outline-none focus:border-terracotta-500">
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] uppercase tracking-wider text-earth-300 font-medium mb-1">Contact Phone</label>
+              <input type="tel" required placeholder="+91 98490 00000" class="w-full bg-earth-950 border border-earth-800 rounded-xl px-3.5 py-2 text-xs text-earth-100 placeholder-earth-600 focus:outline-none focus:border-terracotta-500">
+            </div>
+            <div>
+              <label class="block text-[11px] uppercase tracking-wider text-earth-300 font-medium mb-1">Guests</label>
+              <select class="w-full bg-earth-950 border border-earth-800 rounded-xl px-3 py-2 text-xs text-earth-100 focus:outline-none focus:border-terracotta-500">
+                <option>2 Guests</option>
+                <option>4 Guests</option>
+                <option>6 Guests</option>
+                <option>8+ Royal Party</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] uppercase tracking-wider text-earth-300 font-medium mb-1">Preferred Date</label>
+              <input type="date" required class="w-full bg-earth-950 border border-earth-800 rounded-xl px-3 py-2 text-xs text-earth-100 focus:outline-none focus:border-terracotta-500">
+            </div>
+            <div>
+              <label class="block text-[11px] uppercase tracking-wider text-earth-300 font-medium mb-1">Session</label>
+              <select class="w-full bg-earth-950 border border-earth-800 rounded-xl px-3 py-2 text-xs text-earth-100 focus:outline-none focus:border-terracotta-500">
+                <option>Morning Tiffin (8:00 AM)</option>
+                <option>Lunch Feast (1:00 PM)</option>
+                <option>Dinner Feast (8:00 PM)</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="w-full mt-2 py-2.5 bg-terracotta-500 hover:bg-terracotta-600 text-white rounded-xl text-xs font-semibold uppercase tracking-wider transition shadow-lg">
+            Confirm Table Request
+          </button>
+        </form>
+      </div>
+
+      <!-- Patron Testimonials -->
+      <div class="flex flex-col justify-between py-2">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-brass-400 font-semibold">Food Critics & Patrons</span>
+          <h3 class="text-2xl font-editorial font-bold text-earth-50 mt-1 mb-6">Words from Our Diners</h3>
+          
+          <div class="space-y-5">
+            <blockquote class="border-l-2 border-brass-500/60 pl-4 py-1">
+              <p class="text-xs text-earth-300 italic leading-relaxed">
+                "The Erra Karam Dosa takes you straight back to the night markets of Kadapa. Real firewood heat, pure country ghee, and zero shortcuts."
+              </p>
+              <footer class="text-[10px] uppercase tracking-wider text-brass-400 font-medium mt-2">
+                — Gourmet Chronicles South India
+              </footer>
+            </blockquote>
+
+            <blockquote class="border-l-2 border-terracotta-500/60 pl-4 py-1">
+              <p class="text-xs text-earth-300 italic leading-relaxed">
+                "Their Ragi Sangati with Natukodi Pulusu is perhaps the finest rustic country stew outside the villages of Kurnool."
+              </p>
+              <footer class="text-[10px] uppercase tracking-wider text-brass-400 font-medium mt-2">
+                — Chef K. V. Raghavan
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="bg-earth-950 p-4 rounded-xl border border-earth-800 text-xs text-earth-400 mt-6">
+          <div class="flex items-center gap-2 text-brass-400 font-semibold mb-1">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span>Daily Kitchen Batch Assurance</span>
+          </div>
+          Every morning’s Erra Karam is stone-ground at 05:00 AM. Masalas do not carry over across calendar days.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-earth-950 border-t border-earth-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-8 h-8 rounded-full border border-brass-500/40 bg-earth-900 flex items-center justify-center">
+            <i data-lucide="flame" class="w-4 h-4 text-terracotta-500"></i>
+          </div>
+          <span class="font-editorial text-lg font-bold text-earth-50">Rayalaseema Dhum</span>
+        </div>
+        <p class="text-xs text-earth-400 leading-relaxed">
+          Rayalaseema Dhum Restaurant preserves authentic woodfire dhum cooking and stone-pounded spice traditions from Andhra Pradesh’s Rayalaseema belt.
+        </p>
+        <p class="text-[11px] text-earth-600 mt-4">
+          © <span id="currentYearSpan">2026</span> Rayalaseema Dhum Restaurant. All rights reserved.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-brass-400 mb-3">Daily Kitchen Hours</h4>
+        <div class="text-xs space-y-2 text-earth-400 font-mono">
+          <div class="flex justify-between border-b border-earth-900 pb-1">
+            <span>Morning Tiffins:</span>
+            <span class="text-earth-200">06:00 AM – 11:00 AM</span>
+          </div>
+          <div class="flex justify-between border-b border-earth-900 pb-1">
+            <span>Lunch Feast:</span>
+            <span class="text-earth-200">11:00 AM – 05:00 PM</span>
+          </div>
+          <div class="flex justify-between border-b border-earth-900 pb-1">
+            <span>Tiffin & Dinner:</span>
+            <span class="text-earth-200">05:00 PM – 11:00 PM</span>
+          </div>
+          <div class="flex justify-between text-red-400/90 pt-1">
+            <span>Kitchen Resting:</span>
+            <span>11:00 PM – 06:00 AM</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-brass-400 mb-3">Location & Dispatch</h4>
+        <div class="text-xs space-y-2 text-earth-400">
+          <p class="flex items-start gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-terracotta-500 shrink-0 mt-0.5"></i>
+            <span>Highway Junction, NH-44 Kurnool - Kadapa Bypass Road</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-terracotta-500 shrink-0"></i>
+            <span>+91 98490 55432 / +91 8518 290111</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-terracotta-500 shrink-0"></i>
+            <span>kitchen@rayalaseemadhum.com</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OVER CART TRAY DRAWER -->
+  <div id="cartBackdropOverlay" onclick="closeCartDrawer()" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  
+  <aside id="cartSlideDrawer" class="fixed right-0 top-0 bottom-0 w-full max-w-md bg-earth-950 border-l border-earth-800 z-50 transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    <!-- Drawer Header -->
+    <div class="p-4 border-b border-earth-800 flex items-center justify-between bg-earth-900">
+      <div class="flex items-center gap-2.5">
+        <i data-lucide="shopping-bag" class="w-4 h-4 text-brass-400"></i>
+        <h3 class="font-editorial font-bold text-base text-earth-100">Your Dining Tray</h3>
+      </div>
+      <button onclick="closeCartDrawer()" class="p-1.5 rounded-lg text-earth-400 hover:text-earth-100 hover:bg-earth-800 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Closed Warning inside cart -->
+    <div id="cartClosedNoticeBox" class="hidden p-3.5 bg-earth-900 border-b border-terracotta-600/50 text-terracotta-300 text-xs flex items-center gap-2.5">
+      <i data-lucide="alert-triangle" class="w-4 h-4 text-terracotta-400 shrink-0"></i>
+      <span>Kitchen is currently closed (11 PM – 6 AM). Stoves resume at 06:00 AM.</span>
+    </div>
+
+    <!-- Items List -->
+    <div id="cartTrayItemsList" class="flex-1 overflow-y-auto p-4 space-y-3">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <!-- Cart Footer & Price Summary -->
+    <div class="p-4 border-t border-earth-800 bg-earth-900/90 space-y-3">
+      <div class="space-y-1.5 text-xs text-earth-300">
+        <div class="flex justify-between">
+          <span>Subtotal</span>
+          <span id="cartSubtotalText" class="font-mono font-bold text-earth-100">₹0</span>
+        </div>
+        <div class="flex justify-between text-earth-400">
+          <span>Taxes & GST (5%)</span>
+          <span id="cartTaxText" class="font-mono">₹0</span>
+        </div>
+        <div class="flex justify-between text-earth-400">
+          <span>Banana Leaf Packaging</span>
+          <span class="font-mono text-emerald-400">COMPLIMENTARY</span>
+        </div>
+        <div class="flex justify-between text-sm font-bold text-earth-100 pt-2 border-t border-earth-800">
+          <span>Grand Total</span>
+          <span id="cartGrandTotalText" class="font-mono text-brass-400 text-base">₹0</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons: Print Bill & Place Order -->
+      <div class="grid grid-cols-2 gap-2.5 pt-2">
+        <button 
+          id="printBillTriggerBtn" 
+          onclick="printOfficialBill()" 
+          disabled 
+          class="py-2.5 px-3 bg-earth-800 hover:bg-earth-700 text-earth-200 font-semibold rounded-xl text-xs transition flex items-center justify-center gap-2 border border-earth-700 disabled:opacity-40 disabled:pointer-events-none">
+          <i data-lucide="printer" class="w-4 h-4 text-brass-400"></i>
+          <span>Print Bill</span>
+        </button>
+
+        <button 
+          id="checkoutTriggerBtn" 
+          onclick="handleOrderCheckout()" 
+          disabled 
+          class="py-2.5 px-3 bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold rounded-xl text-xs transition flex items-center justify-center gap-1.5 shadow-lg disabled:opacity-40 disabled:pointer-events-none">
+          <span>Confirm Order</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- DEDICATED THERMAL RECEIPT CONTAINER (ENGLISH ONLY, formatted for 80mm Print & PDF) -->
+  <div id="printableThermalReceipt" class="hidden font-mono text-black bg-white p-4 max-w-[80mm] mx-auto text-[11px] leading-tight">
+    <div class="text-center pb-2 border-b border-black">
+      <div class="text-base font-bold uppercase tracking-wider">RAYALASEEMA DHUM</div>
+      <div class="text-[10px] font-semibold">HERITAGE WOODFIRE RESTAURANT</div>
+      <div class="text-[9.5px]">NH-44 Bypass Road, Kurnool - Kadapa Highway</div>
+      <div class="text-[9.5px]">Phone: +91 98490 55432 / +91 8518 290111</div>
+      <div class="text-[9.5px]">GSTIN: 37AACCR9812K1Z8 | FSSAI: 10123028000491</div>
+    </div>
+
+    <div class="py-2 border-b border-black space-y-0.5 text-[10px]">
+      <div class="flex justify-between">
+        <span>INVOICE: <strong id="billInvoiceNo">RSD-2026</strong></span>
+        <span>DATE: <span id="billInvoiceDate">10/10/2026</span></span>
+      </div>
+      <div class="flex justify-between">
+        <span>TIME: <span id="billInvoiceTime">12:30 PM</span></span>
+        <span>SESSION: <span id="billInvoiceSession">LUNCH</span></span>
+      </div>
+      <div class="flex justify-between">
+        <span>ORDER TYPE: DINE-IN / TRAY</span>
+        <span>SERVER: RAMU M.</span>
+      </div>
+    </div>
+
+    <!-- Items Header -->
+    <div class="py-1 border-b border-black flex justify-between font-bold text-[10px]">
+      <span class="w-[50%]">ITEM</span>
+      <span class="w-[12%] text-center">QTY</span>
+      <span class="w-[18%] text-right">RATE</span>
+      <span class="w-[20%] text-right">AMT</span>
+    </div>
+
+    <!-- Items Rows -->
+    <div id="billInvoiceItemsRows" class="py-1 border-b border-black space-y-1 text-[10px]">
+      <!-- Inserted dynamically -->
+    </div>
+
+    <!-- Totals & GST Breakup -->
+    <div class="py-2 border-b border-black space-y-1 text-[10px]">
+      <div class="flex justify-between">
+        <span>ITEM SUBTOTAL:</span>
+        <span id="billSubtotalAmount">₹0.00</span>
+      </div>
+      <div class="flex justify-between">
+        <span>CGST (2.5%):</span>
+        <span id="billCgstAmount">₹0.00</span>
+      </div>
+      <div class="flex justify-between">
+        <span>SGST (2.5%):</span>
+        <span id="billSgstAmount">₹0.00</span>
+      </div>
+      <div class="flex justify-between font-bold text-[12px] pt-1.5 border-t border-dotted border-black">
+        <span>NET PAYABLE:</span>
+        <span id="billGrandTotalAmount">₹0.00</span>
+      </div>
+    </div>
+
+    <!-- Thermal Receipt Footer -->
+    <div class="text-center pt-3 space-y-1 text-[9px]">
+      <p class="font-bold">*** THANK YOU FOR DINING WITH US ***</p>
+      <p>Authentic Woodfire Flavors of Rayalaseema</p>
+      <p>www.rayalaseemadhum.com</p>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS MODAL -->
+  <div id="orderConfirmationModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-earth-900 border border-earth-800 rounded-2xl max-w-sm w-full p-6 text-center transform scale-95 transition-transform duration-300 shadow-2xl">
+      <div class="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="check" class="w-6 h-6"></i>
+      </div>
+      <h3 class="font-editorial font-bold text-lg text-earth-100">Order Sent to Stoves!</h3>
+      <p class="text-xs text-earth-400 mt-1 leading-relaxed">
+        Your food tray has been transferred to our woodfire kitchen. You can print your official bill receipt right now.
+      </p>
+      <div class="bg-earth-950 p-2.5 rounded-xl border border-earth-800 text-xs font-mono text-brass-400 my-4">
+        Invoice Ticket #<span id="confirmedOrderNum">1001</span>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="printOfficialBill()" class="py-2 bg-earth-800 hover:bg-earth-700 text-earth-200 rounded-xl text-xs font-medium flex items-center justify-center gap-1.5 border border-earth-700">
+          <i data-lucide="printer" class="w-3.5 h-3.5 text-brass-400"></i> Print Bill
+        </button>
+        <button onclick="closeConfirmationModal()" class="py-2 bg-terracotta-500 hover:bg-terracotta-600 text-white rounded-xl text-xs font-medium">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING INTERACTIVE TOAST -->
+  <div id="actionToastBox" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 bg-earth-900 border border-brass-500/40 px-4 py-2.5 rounded-xl shadow-2xl text-xs text-earth-100">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-brass-400"></i>
+    <span id="actionToastMessage">Item updated</span>
+  </div>
+
+  <script>
+    /* 
+     * AUTHENTIC RAYALASEEMA MENU DATABASE
+     * All prices in INR (₹), categorized by strict session windows:
+     * - 'TIFFIN'        : Active during 6:00 AM – 11:00 AM & 5:00 PM – 11:00 PM
+     * - 'LUNCH'         : Active during 11:00 AM – 5:00 PM
+     * - 'DINNER_TIFFIN' : Active during 5:00 PM – 11:00 PM
+     */
+    const MENU_ITEMS = [
+      // TIFFIN SPECIALTIES
+      {
+        id: 'tif-uggani-bajji',
+        name: 'Kurnool Uggani Bajji Combo',
+        category: 'Tiffins',
+        sessions: ['TIFFIN', 'DINNER_TIFFIN'],
+        isVeg: true,
+        price: 95,
+        spice: 2, // 1: Mild, 2: Medium, 3: Fiery
+        desc: 'Seasoned Kurnool puffed rice tossed with roasted gram powder, cumin, onions & fresh curry leaves; paired with two crisp Mirchi Bajjis.',
+        chefSpecial: true,
+        image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'tif-erra-karam-dosa',
+        name: 'Rayalaseema Ghee Erra Karam Dosa',
+        category: 'Tiffins',
+        sessions: ['TIFFIN', 'DINNER_TIFFIN'],
+        isVeg: true,
+        price: 110,
+        spice: 3,
+        desc: 'Crisp roasted crepe smeared with fiery stone-ground Kadapa red chilli-garlic paste and drenched in fragrant country cow ghee.',
+        chefSpecial: true,
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'tif-kadapa-karam-dosa',
+        name: 'Kadapa Onion Karam Dosa',
+        category: 'Tiffins',
+        sessions: ['TIFFIN', 'DINNER_TIFFIN'],
+        isVeg: true,
+        price: 100,
+        spice: 3,
+        desc: 'Thin crisp crepe topped with finely chopped shallots and authentic garlic chilli chutney, served with fresh ground peanut chutney.',
+        chefSpecial: false,
+        image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'tif-thatte-idli',
+        name: 'Rayalaseema Thatte Idli with Gunpowder (2 pcs)',
+        category: 'Tiffins',
+        sessions: ['TIFFIN', 'DINNER_TIFFIN'],
+        isVeg: true,
+        price: 75,
+        spice: 1,
+        desc: 'Steamed thick plate idlis served drenched with warm ghee, sprinkled with homemade spiced dal podi and paired with country drumstick sambar.',
+        chefSpecial: false,
+        image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'tif-pesarattu-upma',
+        name: 'Pesarattu Upma with Allam Pachadi',
+        category: 'Tiffins',
+        sessions: ['TIFFIN', 'DINNER_TIFFIN'],
+        isVeg: true,
+        price: 105,
+        spice: 2,
+        desc: 'Nutritious green gram crepe stuffed with flavorful ginger-onion upma, accompanied by sharp ginger-jaggery chutney.',
+        chefSpecial: false,
+        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'tif-medu-vada',
+        name: 'Crispy Medu Vada (2 pcs)',
+        category: 'Tiffins',
+        sessions: ['TIFFIN', 'DINNER_TIFFIN'],
+        isVeg: true,
+        price: 65,
+        spice: 1,
+        desc: 'Golden fried urad dal fritters studded with crushed black pepper, chopped ginger and fresh coconut bits.',
+        chefSpecial: false,
+        image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'tif-filter-kaapi',
+        name: 'Artisanal Brass Davarah Filter Coffee',
+        category: 'Beverages',
+        sessions: ['TIFFIN', 'DINNER_TIFFIN'],
+        isVeg: true,
+        price: 45,
+        spice: 0,
+        desc: 'Freshly brewed estate chicory blend poured from a height into a traditional warm brass davarah and tumbler.',
+        chefSpecial: false,
+        image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80'
+      },
+
+      // LUNCH SPECIALTIES
+      {
+        id: 'lun-kodi-dhum-biryani',
+        name: 'Rayalaseema Kodi Dhum Biryani',
+        category: 'Biryani',
+        sessions: ['LUNCH', 'DINNER_TIFFIN'],
+        isVeg: false,
+        price: 290,
+        spice: 3,
+        desc: 'Tender country chicken layered with aged long grain basmati rice, sealed in copper pots over babool charcoal embers.',
+        chefSpecial: true,
+        image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'lun-mutton-dhum-biryani',
+        name: 'Rayalaseema Mutton Dhum Biryani',
+        category: 'Biryani',
+        sessions: ['LUNCH', 'DINNER_TIFFIN'],
+        isVeg: false,
+        price: 380,
+        spice: 3,
+        desc: 'Succulent baby goat cuts marinated in green chilli paste, ginger and stone-ground garam masala, slow dhum cooked to perfection.',
+        chefSpecial: true,
+        image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'lun-ragi-sangati-natukodi',
+        name: 'Ragi Sangati with Natukodi Pulusu',
+        category: 'Main Course',
+        sessions: ['LUNCH'],
+        isVeg: false,
+        price: 310,
+        spice: 3,
+        desc: 'Wholesome finger millet ball served piping hot with fiery country chicken curry stewed with roasted coriander and dry coconut.',
+        chefSpecial: true,
+        image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'lun-gongura-mutton',
+        name: 'Rayalaseema Gongura Mutton',
+        category: 'Curries',
+        sessions: ['LUNCH', 'DINNER_TIFFIN'],
+        isVeg: false,
+        price: 340,
+        spice: 3,
+        desc: 'Braised mutton chunks simmered in a tangy puree of sour red sorrel leaves, crushed shallots, and hand-roasted spices.',
+        chefSpecial: true,
+        image: 'https://images.unsplash.com/photo-1545247181-516773cae7be?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'lun-gutti-vankaya',
+        name: 'Gutti Vankaya Koora with Ragi Sangati',
+        category: 'Main Course',
+        sessions: ['LUNCH'],
+        isVeg: true,
+        price: 220,
+        spice: 2,
+        desc: 'Baby purple eggplants stuffed with dry-roasted peanut, sesame, and desiccated coconut gravy; served with one Ragi mudda.',
+        chefSpecial: false,
+        image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'lun-royyala-iguru',
+        name: 'Rayalaseema Royyala Iguru (Prawns Fry)',
+        category: 'Curries',
+        sessions: ['LUNCH', 'DINNER_TIFFIN'],
+        isVeg: false,
+        price: 360,
+        spice: 3,
+        desc: 'Plump freshwater prawns tossed with caramelized onions, curry leaves, crushed garlic and coarse pepper reduction.',
+        chefSpecial: false,
+        image: 'https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'lun-raja-bhojanam',
+        name: 'Rayalaseema Raja Bhojanam (Royal Meals)',
+        category: 'Main Course',
+        sessions: ['LUNCH'],
+        isVeg: true,
+        price: 240,
+        spice: 2,
+        desc: 'Unlimited dining feast served on banana leaf: hot Sona Masuri rice, Pappu Charu, Sambar, Rasam, Gongura Pachadi, fry, Curd & Payasam.',
+        chefSpecial: true,
+        image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=600&auto=format&fit=crop&q=80'
+      },
+
+      // DINNER SPECIALTIES
+      {
+        id: 'din-parotta-salna',
+        name: 'Flaky Seema Parotta with Chicken Salna (2 pcs)',
+        category: 'Dinner Specials',
+        sessions: ['DINNER_TIFFIN'],
+        isVeg: false,
+        price: 160,
+        spice: 2,
+        desc: 'Hand-stretched multi-layered flaky parottas served with rich roadside-style chicken salna and sliced shallot raita.',
+        chefSpecial: false,
+        image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'din-kothu-parotta',
+        name: 'Rayalaseema Muttai Kothu Parotta',
+        category: 'Dinner Specials',
+        sessions: ['DINNER_TIFFIN'],
+        isVeg: false,
+        price: 190,
+        spice: 3,
+        desc: 'Shredded parotta beaten on a scorching cast iron griddle with country eggs, shredded chicken, and spicy chicken gravy.',
+        chefSpecial: true,
+        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'din-ragi-sangati-mutton',
+        name: 'Ragi Sangati with Mutton Pulusu',
+        category: 'Main Course',
+        sessions: ['DINNER_TIFFIN'],
+        isVeg: false,
+        price: 350,
+        spice: 3,
+        desc: 'Freshly prepared finger millet ball served alongside rich mutton curry infused with roasted pepper and poppy seed gravy.',
+        chefSpecial: true,
+        image: 'https://images.unsplash.com/photo-1545247181-516773cae7be?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'din-tawa-chicken-roast',
+        name: 'Rayalaseema Tawa Chicken Roast',
+        category: 'Starters',
+        sessions: ['DINNER_TIFFIN'],
+        isVeg: false,
+        price: 250,
+        spice: 3,
+        desc: 'Tender chicken morsels pan-roasted with fresh curry leaves, crushed shallots, and cracked Tellicherry black pepper.',
+        chefSpecial: false,
+        image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&auto=format&fit=crop&q=80'
+      }
+    ];
+
+    /* Global Application State */
+    let simulatedHour = null;
+    let simulatedMinute = null;
+    let activeKitchenSession = 'TIFFIN'; // 'TIFFIN' | 'LUNCH' | 'DINNER_TIFFIN' | 'CLOSED'
+    let currentCategoryFilter = 'ALL';
+    let currentDietaryFilter = 'ALL';
+    let currentSearchTerm = '';
+    let cartTray = []; // { item, quantity }
+    let invoiceSequence = 2026;
+
+    /**
+     * Exact Prompt Schedule Rules:
+     * 1. 06:00 AM – 11:00 AM -> Morning Tiffins (ONLY Tiffin items)
+     * 2. 11:00 AM – 05:00 PM -> Afternoon Lunch (ONLY Lunch items)
+     * 3. 05:00 PM – 11:00 PM -> Tiffin & Dinner (Show BOTH Tiffin and Dinner items)
+     * 4. 11:00 PM – 06:00 AM -> Restaurant Closed (Disable checkout & show schedule)
+     */
+    function computeKitchenSession(h, m) {
+      const minutes = h * 60 + m;
+      const tiffinStart = 6 * 60;   // 06:00 AM (360)
+      const lunchStart = 11 * 60;   // 11:00 AM (660)
+      const dinnerStart = 17 * 60;  // 05:00 PM (1020)
+      const closingTime = 23 * 60;  // 11:00 PM (1380)
+
+      if (minutes >= tiffinStart && minutes < lunchStart) {
+        return 'TIFFIN';
+      } else if (minutes >= lunchStart && minutes < dinnerStart) {
+        return 'LUNCH';
+      } else if (minutes >= dinnerStart && minutes < closingTime) {
+        return 'DINNER_TIFFIN';
+      } else {
+        return 'CLOSED';
+      }
+    }
+
+    function formatTime12h(h, m, s = 0) {
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      let displayHour = h % 12;
+      displayHour = displayHour ? displayHour : 12;
+      const hh = String(displayHour).padStart(2, '0');
+      const mm = String(m).padStart(2, '0');
+      const ss = String(s).padStart(2, '0');
+      return `${hh}:${mm}:${ss} ${ampm}`;
+    }
+
+    /* Simulation Control Functions */
+    function setSimulatedHour(h, m) {
+      simulatedHour = h;
+      simulatedMinute = m;
+      
+      const liveBtn = document.getElementById('liveResetBtn');
+      if (liveBtn) {
+        liveBtn.classList.remove('bg-brass-500', 'text-earth-950');
+        liveBtn.classList.add('bg-earth-800', 'text-earth-300');
+      }
+      
+      refreshSessionAndInterface();
+      showActionToast(`Simulated time set to ${formatTime12h(h, m)}`);
+    }
+
+    function resetToLiveTime() {
+      simulatedHour = null;
+      simulatedMinute = null;
+      
+      const liveBtn = document.getElementById('liveResetBtn');
+      if (liveBtn) {
+        liveBtn.classList.add('bg-brass-500', 'text-earth-950');
+        liveBtn.classList.remove('bg-earth-800', 'text-earth-300');
+      }
+
+      refreshSessionAndInterface();
+      showActionToast('Returned to Live System Clock');
+    }
+
+    /* Master Session Refresh Engine */
+    function refreshSessionAndInterface() {
+      const now = new Date();
+      const currentH = simulatedHour !== null ? simulatedHour : now.getHours();
+      const currentM = simulatedMinute !== null ? simulatedMinute : now.getMinutes();
+      const currentS = simulatedHour !== null ? 0 : now.getSeconds();
+
+      // Update simulator clock
+      const clockEl = document.getElementById('simulatorClockDisplay');
+      if (clockEl) clockEl.textContent = formatTime12h(currentH, currentM, currentS);
+
+      const calculatedSession = computeKitchenSession(currentH, currentM);
+      const sessionChanged = calculatedSession !== activeKitchenSession;
+      activeKitchenSession = calculatedSession;
+
+      if (sessionChanged) {
+        currentCategoryFilter = 'ALL';
+      }
+
+      updateStatusBannersAndBadges();
+      renderCategoryTabs();
+      renderDishCardsGrid();
+      updateScheduleTimelineHighlight();
+      updateCartClosedState();
+    }
+
+    function updateStatusBannersAndBadges() {
+      const sessionBadge = document.getElementById('simulatorSessionBadge');
+      const closedBanner = document.getElementById('closedNoticeBanner');
+      const tagPill = document.getElementById('sessionTagPill');
+      const timeWindow = document.getElementById('sessionTimeWindowText');
+      const titleEl = document.getElementById('sessionHeadlineTitle');
+      const descEl = document.getElementById('sessionHeadlineDescription');
+      const statusPill = document.getElementById('sessionStatusPill');
+
+      if (activeKitchenSession === 'TIFFIN') {
+        closedBanner.classList.add('hidden');
+        sessionBadge.className = 'px-2.5 py-0.5 rounded-full font-medium tracking-wide border text-[10px] uppercase bg-brass-500/10 text-brass-400 border-brass-500/40';
+        sessionBadge.textContent = '🌅 Morning Tiffins Active';
+
+        tagPill.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-brass-500 text-earth-950';
+        tagPill.textContent = 'Morning Tiffins';
+        timeWindow.textContent = '06:00 AM – 11:00 AM';
+        titleEl.textContent = 'Morning Tiffin Specialties';
+        descEl.textContent = 'Displaying exclusively morning tiffin preparations: Uggani Bajji, Ghee Erra Karam Dosa, Pesarattu Upma, and Thatte Idlis.';
+        statusPill.textContent = 'Active: Tiffins Only';
+        statusPill.className = 'text-xs font-mono font-bold text-brass-400 mt-0.5';
+      } 
+      else if (activeKitchenSession === 'LUNCH') {
+        closedBanner.classList.add('hidden');
+        sessionBadge.className = 'px-2.5 py-0.5 rounded-full font-medium tracking-wide border text-[10px] uppercase bg-terracotta-500/10 text-terracotta-400 border-terracotta-500/40';
+        sessionBadge.textContent = '☀️ Lunch Feast Active';
+
+        tagPill.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-terracotta-500 text-white';
+        tagPill.textContent = 'Afternoon Lunch';
+        timeWindow.textContent = '11:00 AM – 05:00 PM';
+        titleEl.textContent = 'Woodfire Lunch Feasts';
+        descEl.textContent = 'Displaying exclusively lunch dishes: Rayalaseema Kodi Dhum Biryani, Mutton Biryani, Ragi Sangati Natukodi Pulusu & Meals.';
+        statusPill.textContent = 'Active: Lunch Feasts Only';
+        statusPill.className = 'text-xs font-mono font-bold text-terracotta-400 mt-0.5';
+      } 
+      else if (activeKitchenSession === 'DINNER_TIFFIN') {
+        closedBanner.classList.add('hidden');
+        sessionBadge.className = 'px-2.5 py-0.5 rounded-full font-medium tracking-wide border text-[10px] uppercase bg-amber-500/10 text-amber-300 border-amber-500/40';
+        sessionBadge.textContent = '🌙 Tiffin & Dinner Active';
+
+        tagPill.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-amber-600 text-white';
+        tagPill.textContent = 'Tiffin & Dinner Combined';
+        timeWindow.textContent = '05:00 PM – 11:00 PM';
+        titleEl.textContent = 'Evening Tiffins & Grand Dinner';
+        descEl.textContent = 'Both evening Tiffins (Erra Karam Dosa, Uggani) and heavy Dinner Biryanis, Parotta Salna & Curries are served together.';
+        statusPill.textContent = 'Active: Dual Tiffin + Dinner';
+        statusPill.className = 'text-xs font-mono font-bold text-amber-300 mt-0.5';
+      } 
+      else {
+        // CLOSED (11:00 PM to 06:00 AM)
+        closedBanner.classList.remove('hidden');
+        sessionBadge.className = 'px-2.5 py-0.5 rounded-full font-medium tracking-wide border text-[10px] uppercase bg-red-950/70 text-red-400 border-red-800 animate-pulse';
+        sessionBadge.textContent = '🛑 Closed (11 PM – 6 AM)';
+
+        tagPill.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-earth-800 text-red-400 border border-red-800';
+        tagPill.textContent = 'Kitchen Resting (Closed)';
+        timeWindow.textContent = '11:00 PM – 06:00 AM';
+        titleEl.textContent = 'Complete Menu Catalog (Kitchen Closed)';
+        descEl.textContent = 'Our woodfire stoves are currently resting for the night. You may explore all our dishes, but ordering resumes at 06:00 AM.';
+        statusPill.textContent = 'Orders Paused Until 6:00 AM';
+        statusPill.className = 'text-xs font-mono font-bold text-red-400 mt-0.5';
+      }
+    }
+
+    function updateScheduleTimelineHighlight() {
+      const cardTiffin = document.getElementById('scheduleCardTiffin');
+      const cardLunch = document.getElementById('scheduleCardLunch');
+      const cardDinner = document.getElementById('scheduleCardDinner');
+      const cardClosed = document.getElementById('scheduleCardClosed');
+
+      [cardTiffin, cardLunch, cardDinner, cardClosed].forEach(c => {
+        if (!c) return;
+        c.classList.remove('border-brass-500', 'border-terracotta-500', 'border-red-600', 'bg-earth-850');
+      });
+
+      if (activeKitchenSession === 'TIFFIN' && cardTiffin) {
+        cardTiffin.classList.add('border-brass-500', 'bg-earth-850');
+      } else if (activeKitchenSession === 'LUNCH' && cardLunch) {
+        cardLunch.classList.add('border-terracotta-500', 'bg-earth-850');
+      } else if (activeKitchenSession === 'DINNER_TIFFIN' && cardDinner) {
+        cardDinner.classList.add('border-brass-500', 'bg-earth-850');
+      } else if (activeKitchenSession === 'CLOSED' && cardClosed) {
+        cardClosed.classList.add('border-red-600', 'bg-earth-850');
+      }
+    }
+
+    function getActiveSessionDishes() {
+      if (activeKitchenSession === 'CLOSED') {
+        // Return full catalogue for guest browsing
+        return MENU_ITEMS;
+      }
+      return MENU_ITEMS.filter(dish => dish.sessions.includes(activeKitchenSession));
+    }
+
+    function renderCategoryTabs() {
+      const activeDishes = getActiveSessionDishes();
+      const categories = ['ALL', ...new Set(activeDishes.map(d => d.category))];
+      const container = document.getElementById('categoryTabsRow');
+      if (!container) return;
+
+      container.innerHTML = categories.map(cat => {
+        const isSelected = currentCategoryFilter === cat;
+        const btnClass = isSelected
+          ? 'bg-terracotta-500 text-white font-semibold'
+          : 'bg-earth-900 text-earth-300 hover:bg-earth-850 border border-earth-800';
+
+        return `
+          <button onclick="setCategoryFilter('${cat}')" class="px-3 py-1.5 rounded-lg text-xs whitespace-nowrap transition ${btnClass}">
+            ${cat === 'ALL' ? 'All Dishes' : cat}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setCategoryFilter(cat) {
+      currentCategoryFilter = cat;
+      renderCategoryTabs();
+      renderDishCardsGrid();
+    }
+
+    function setDietaryFilter(type) {
+      currentDietaryFilter = type;
+      const bAll = document.getElementById('filterAllBtn');
+      const bVeg = document.getElementById('filterVegBtn');
+      const bNonVeg = document.getElementById('filterNonVegBtn');
+
+      [bAll, bVeg, bNonVeg].forEach(b => {
+        if (!b) return;
+        b.className = 'px-3 py-1 rounded-lg text-xs font-medium bg-earth-900 text-earth-300 hover:bg-earth-850 transition flex items-center gap-1.5';
+      });
+
+      if (type === 'ALL') {
+        bAll.className = 'px-3 py-1 rounded-lg text-xs font-medium bg-earth-800 text-earth-100 transition';
+      } else if (type === 'VEG') {
+        bVeg.className = 'px-3 py-1 rounded-lg text-xs font-medium bg-emerald-950/80 text-emerald-300 border border-emerald-700 transition flex items-center gap-1.5';
+      } else if (type === 'NON_VEG') {
+        bNonVeg.className = 'px-3 py-1 rounded-lg text-xs font-medium bg-red-950/80 text-red-300 border border-red-700 transition flex items-center gap-1.5';
+      }
+
+      renderDishCardsGrid();
+    }
+
+    function handleMenuSearch(val) {
+      currentSearchTerm = val.trim().toLowerCase();
+      renderDishCardsGrid();
+    }
+
+    function resetMenuFilters() {
+      currentCategoryFilter = 'ALL';
+      currentDietaryFilter = 'ALL';
+      currentSearchTerm = '';
+      const input = document.getElementById('dishSearchQuery');
+      if (input) input.value = '';
+      setDietaryFilter('ALL');
+      renderCategoryTabs();
+      renderDishCardsGrid();
+    }
+
+    function renderDishCardsGrid() {
+      const grid = document.getElementById('dishCatalogGrid');
+      const emptyBox = document.getElementById('menuEmptyNotice');
+      const countEl = document.getElementById('dishCountDisplay');
+      if (!grid) return;
+
+      let list = getActiveSessionDishes();
+
+      if (currentCategoryFilter !== 'ALL') {
+        list = list.filter(d => d.category === currentCategoryFilter);
+      }
+      if (currentDietaryFilter === 'VEG') {
+        list = list.filter(d => d.isVeg === true);
+      } else if (currentDietaryFilter === 'NON_VEG') {
+        list = list.filter(d => d.isVeg === false);
+      }
+      if (currentSearchTerm) {
+        list = list.filter(d =>
+          d.name.toLowerCase().includes(currentSearchTerm) ||
+          d.desc.toLowerCase().includes(currentSearchTerm) ||
+          d.category.toLowerCase().includes(currentSearchTerm)
+        );
+      }
+
+      if (countEl) countEl.textContent = list.length;
+
+      if (list.length === 0) {
+        grid.innerHTML = '';
+        emptyBox.classList.remove('hidden');
+        return;
+      }
+      emptyBox.classList.add('hidden');
+
+      grid.innerHTML = list.map(dish => {
+        const dietIcon = dish.isVeg
+          ? `<span class="diet-badge-veg" title="Vegetarian"><span class="diet-badge-veg-dot"></span></span>`
+          : `<span class="diet-badge-nonveg" title="Non-Vegetarian"><span class="diet-badge-nonveg-triangle"></span></span>`;
+
+        let spiceDisplay = '';
+        if (dish.spice === 1) spiceDisplay = '<span class="text-[10px] text-earth-400">Mild Spice</span>';
+        else if (dish.spice === 2) spiceDisplay = '<span class="text-[10px] text-brass-400">Medium 🌶️</span>';
+        else if (dish.spice === 3) spiceDisplay = '<span class="text-[10px] text-terracotta-400">Fiery Seema 🌶️🌶️</span>';
+
+        const existingItem = cartTray.find(c => c.item.id === dish.id);
+        const qty = existingItem ? existingItem.quantity : 0;
+        const isClosed = activeKitchenSession === 'CLOSED';
+
+        return `
+          <div class="bg-earth-900 border border-earth-800 rounded-2xl overflow-hidden hover:border-earth-700 transition flex flex-col justify-between shadow-lg group">
+            
+            <!-- Dish Photography -->
+            <div class="relative h-48 w-full bg-earth-950 overflow-hidden">
+              <img 
+                src="${dish.image}" 
+                alt="${dish.name}" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                loading="lazy"
+                onerror="this.src='https://placehold.co/600x400/191512/d5c7bc?text=Rayalaseema+Dhum'"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-earth-900 via-transparent to-black/20"></div>
+
+              <!-- Dietary and Special Tags -->
+              <div class="absolute top-3 left-3 flex items-center gap-2">
+                <span class="bg-earth-950/90 backdrop-blur-md px-2 py-0.5 rounded text-[10px] font-semibold text-earth-200 border border-earth-800 flex items-center gap-1.5 shadow">
+                  ${dietIcon} ${dish.isVeg ? 'Pure Veg' : 'Non-Veg'}
+                </span>
+                ${dish.chefSpecial ? `<span class="bg-brass-500 text-earth-950 font-bold text-[9px] px-2 py-0.5 rounded uppercase tracking-wider shadow">Chef's Signature</span>` : ''}
+              </div>
+
+              ${dish.spice > 0 ? `<div class="absolute top-3 right-3 bg-earth-950/90 backdrop-blur-md px-2 py-0.5 rounded border border-earth-800 shadow">${spiceDisplay}</div>` : ''}
+            </div>
+
+            <!-- Card Content -->
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold text-brass-400 uppercase tracking-wider block mb-1">${dish.category}</span>
+                <h3 class="text-base font-editorial font-bold text-earth-50 leading-snug">${dish.name}</h3>
+                <p class="text-xs text-earth-300 mt-2 leading-relaxed font-normal">${dish.desc}</p>
+              </div>
+
+              <!-- Price & Tray Controls -->
+              <div class="mt-5 pt-3.5 border-t border-earth-800/80 flex items-center justify-between">
+                <div>
+                  <span class="text-[9px] text-earth-400 uppercase tracking-widest block font-medium">Price</span>
+                  <span class="text-base font-mono font-bold text-brass-400">₹${dish.price}</span>
+                </div>
+
+                <div>
+                  ${isClosed ? `
+                    <button onclick="handleClosedOrderAttempt()" class="px-3 py-1.5 rounded-lg text-[11px] font-medium bg-earth-850 text-earth-400 border border-earth-800 hover:text-red-400 transition">
+                      Kitchen Resting
+                    </button>
+                  ` : qty === 0 ? `
+                    <button 
+                      onclick="addToTray('${dish.id}')" 
+                      class="px-4 py-2 bg-earth-850 hover:bg-terracotta-500 text-earth-100 hover:text-white text-xs font-semibold rounded-xl border border-earth-700/80 hover:border-terracotta-500 transition flex items-center gap-1.5 shadow active:scale-95">
+                      <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                      <span>Add to Tray</span>
+                    </button>
+                  ` : `
+                    <div class="flex items-center gap-2 bg-terracotta-500 text-white rounded-xl px-2.5 py-1.5 shadow">
+                      <button onclick="updateTrayQuantity('${dish.id}', -1)" class="font-bold text-xs px-1 hover:opacity-80 transition">-</button>
+                      <span class="font-mono font-bold text-xs px-1">${qty}</span>
+                      <button onclick="updateTrayQuantity('${dish.id}', 1)" class="font-bold text-xs px-1 hover:opacity-80 transition">+</button>
+                    </div>
+                  `}
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function handleClosedOrderAttempt() {
+      showActionToast('Kitchen is resting (11:00 PM – 06:00 AM). Ordering reopens at 06:00 AM.');
+    }
+
+    function addToTray(dishId) {
+      if (activeKitchenSession === 'CLOSED') {
+        handleClosedOrderAttempt();
+        return;
+      }
+
+      const dish = MENU_ITEMS.find(d => d.id === dishId);
+      if (!dish) return;
+
+      const existing = cartTray.find(c => c.item.id === dishId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cartTray.push({ item: dish, quantity: 1 });
+      }
+
+      updateCartTrayUI();
+      renderDishCardsGrid();
+      showActionToast(`Added "${dish.name}" to dining tray`);
+    }
+
+    function updateTrayQuantity(dishId, delta) {
+      const idx = cartTray.findIndex(c => c.item.id === dishId);
+      if (idx === -1) return;
+
+      cartTray[idx].quantity += delta;
+      if (cartTray[idx].quantity <= 0) {
+        cartTray.splice(idx, 1);
+      }
+
+      updateCartTrayUI();
+      renderDishCardsGrid();
+    }
+
+    function updateCartClosedState() {
+      const noticeBox = document.getElementById('cartClosedNoticeBox');
+      const checkoutBtn = document.getElementById('checkoutTriggerBtn');
+      const isClosed = activeKitchenSession === 'CLOSED';
+
+      if (noticeBox) {
+        if (isClosed) noticeBox.classList.remove('hidden');
+        else noticeBox.classList.add('hidden');
+      }
+
+      if (checkoutBtn) {
+        checkoutBtn.disabled = isClosed || cartTray.length === 0;
+      }
+    }
+
+    function updateCartTrayUI() {
+      const navBadge = document.getElementById('navCartCount');
+      const listContainer = document.getElementById('cartTrayItemsList');
+      const subtotalEl = document.getElementById('cartSubtotalText');
+      const taxEl = document.getElementById('cartTaxText');
+      const grandTotalEl = document.getElementById('cartGrandTotalText');
+      const printBtn = document.getElementById('printBillTriggerBtn');
+      const checkoutBtn = document.getElementById('checkoutTriggerBtn');
+
+      const totalQty = cartTray.reduce((acc, c) => acc + c.quantity, 0);
+      if (navBadge) navBadge.textContent = totalQty;
+
+      let subtotal = 0;
+      cartTray.forEach(c => {
+        subtotal += c.item.price * c.quantity;
+      });
+
+      const tax = Math.round(subtotal * 0.05); // 5% GST
+      const grandTotal = subtotal + tax;
+
+      if (subtotalEl) subtotalEl.textContent = `₹${subtotal}`;
+      if (taxEl) taxEl.textContent = `₹${tax}`;
+      if (grandTotalEl) grandTotalEl.textContent = `₹${grandTotal}`;
+
+      if (printBtn) printBtn.disabled = cartTray.length === 0;
+      if (checkoutBtn) checkoutBtn.disabled = activeKitchenSession === 'CLOSED' || cartTray.length === 0;
+
+      if (!listContainer) return;
+
+      if (cartTray.length === 0) {
+        listContainer.innerHTML = `
+          <div class="h-64 flex flex-col items-center justify-center text-center text-earth-500">
+            <i data-lucide="shopping-basket" class="w-10 h-10 mb-2.5 text-earth-600"></i>
+            <p class="font-editorial text-sm font-semibold text-earth-200">Your dining tray is empty</p>
+            <p class="text-xs text-earth-400 mt-1 max-w-xs">
+              Select dishes prepared fresh during the active kitchen session.
+            </p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      listContainer.innerHTML = cartTray.map(ci => {
+        const itemSum = ci.item.price * ci.quantity;
+        return `
+          <div class="bg-earth-900 p-3.5 rounded-xl border border-earth-800 flex items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-1.5">
+                <span class="${ci.item.isVeg ? 'diet-badge-veg' : 'diet-badge-nonveg'}">
+                  ${ci.item.isVeg ? '<span class="diet-badge-veg-dot"></span>' : '<span class="diet-badge-nonveg-triangle"></span>'}
+                </span>
+                <span class="text-xs font-semibold text-earth-100">${ci.item.name}</span>
+              </div>
+              <div class="text-[11px] font-mono text-brass-400 mt-1">₹${ci.item.price} × ${ci.quantity} = ₹${itemSum}</div>
+            </div>
+
+            <div class="flex items-center gap-2 bg-earth-950 border border-earth-800 rounded-lg px-2 py-1">
+              <button onclick="updateTrayQuantity('${ci.item.id}', -1)" class="text-earth-400 hover:text-white font-bold text-xs px-1">-</button>
+              <span class="font-mono text-xs font-bold text-earth-100 px-1">${ci.quantity}</span>
+              <button onclick="updateTrayQuantity('${ci.item.id}', 1)" class="text-earth-400 hover:text-white font-bold text-xs px-1">+</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function openCartDrawer() {
+      const drawer = document.getElementById('cartSlideDrawer');
+      const backdrop = document.getElementById('cartBackdropOverlay');
+      if (drawer && backdrop) {
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        drawer.classList.remove('translate-x-full');
+      }
+    }
+
+    function closeCartDrawer() {
+      const drawer = document.getElementById('cartSlideDrawer');
+      const backdrop = document.getElementById('cartBackdropOverlay');
+      if (drawer && backdrop) {
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        drawer.classList.add('translate-x-full');
+      }
+    }
+
+    /* PRINT BILL ENGINE (Generates authentic thermal receipt and calls browser window.print()) */
+    function printOfficialBill() {
+      if (cartTray.length === 0) {
+        showActionToast('Please add items to your dining tray before generating bill.');
+        return;
+      }
+
+      invoiceSequence += 1;
+      const invoiceNo = document.getElementById('billInvoiceNo');
+      const invoiceDate = document.getElementById('billInvoiceDate');
+      const invoiceTime = document.getElementById('billInvoiceTime');
+      const invoiceSession = document.getElementById('billInvoiceSession');
+      const rowsContainer = document.getElementById('billInvoiceItemsRows');
+      const subtotalAmount = document.getElementById('billSubtotalAmount');
+      const cgstAmount = document.getElementById('billCgstAmount');
+      const sgstAmount = document.getElementById('billSgstAmount');
+      const grandTotalAmount = document.getElementById('billGrandTotalAmount');
+
+      invoiceNo.textContent = `RSD-${invoiceSequence}`;
+
+      const now = new Date();
+      const dd = String(now.getDate()).padStart(2, '0');
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const yyyy = now.getFullYear();
+      invoiceDate.textContent = `${dd}/${mm}/${yyyy}`;
+
+      const currentH = simulatedHour !== null ? simulatedHour : now.getHours();
+      const currentM = simulatedMinute !== null ? simulatedMinute : now.getMinutes();
+      invoiceTime.textContent = formatTime12h(currentH, currentM);
+      invoiceSession.textContent = activeKitchenSession;
+
+      let subtotal = 0;
+      rowsContainer.innerHTML = cartTray.map(c => {
+        const rowTotal = c.item.price * c.quantity;
+        subtotal += rowTotal;
+        return `
+          <div class="flex justify-between items-center text-[10px]">
+            <span class="w-[50%] truncate font-medium">${c.item.name}</span>
+            <span class="w-[12%] text-center">${c.quantity}</span>
+            <span class="w-[18%] text-right">₹${c.item.price}</span>
+            <span class="w-[20%] text-right font-bold">₹${rowTotal}</span>
+          </div>
+        `;
+      }).join('');
+
+      const gstTotal = Math.round(subtotal * 0.05);
+      const halfGst = (gstTotal / 2).toFixed(2);
+      const netPayable = subtotal + gstTotal;
+
+      subtotalAmount.textContent = `₹${subtotal.toFixed(2)}`;
+      cgstAmount.textContent = `₹${halfGst}`;
+      sgstAmount.textContent = `₹${halfGst}`;
+      grandTotalAmount.textContent = `₹${netPayable.toFixed(2)}`;
+
+      // Temporarily reveal thermal receipt DOM for print media capture
+      const receiptWrapper = document.getElementById('printableThermalReceipt');
+      receiptWrapper.classList.remove('hidden');
+
+      window.print();
+
+      setTimeout(() => {
+        receiptWrapper.classList.add('hidden');
+      }, 1000);
+    }
+
+    function handleOrderCheckout() {
+      if (cartTray.length === 0 || activeKitchenSession === 'CLOSED') return;
+      closeCartDrawer();
+
+      const ticketNum = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('confirmedOrderNum').textContent = ticketNum;
+
+      const modal = document.getElementById('orderConfirmationModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.querySelector('div').classList.remove('scale-95');
+
+      // Clear tray
+      cartTray = [];
+      updateCartTrayUI();
+      renderDishCardsGrid();
+    }
+
+    function closeConfirmationModal() {
+      const modal = document.getElementById('orderConfirmationModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.querySelector('div').classList.add('scale-95');
+    }
+
+    function handleReservationSubmit(e) {
+      e.preventDefault();
+      showActionToast('Table reservation request received. Our desk will call you shortly.');
+      e.target.reset();
+    }
+
+    function showActionToast(message) {
+      const toast = document.getElementById('actionToastBox');
+      const toastText = document.getElementById('actionToastMessage');
+      if (!toast || !toastText) return;
+
+      toastText.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+
+      clearTimeout(window.toastTimerInstance);
+      window.toastTimerInstance = setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2800);
+    }
+
+    /* 3-Second Entrance Splash Controller */
+    function initializeSplashScreen() {
+      const progress = document.getElementById('splashProgress');
+      if (progress) {
+        setTimeout(() => { progress.style.width = '100%'; }, 50);
+      }
+
+      // Automatically dissolve after exactly 3000ms
+      setTimeout(() => {
+        dismissSplashScreen();
+      }, 3000);
+    }
+
+    function dismissSplashScreen() {
+      const splash = document.getElementById('splashScreen');
+      if (splash && !splash.classList.contains('opacity-0')) {
+        splash.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+          splash.style.display = 'none';
+        }, 700);
+      }
+    }
+
+    /* Page Initialization */
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Kick off 3-second entrance splash
+      initializeSplashScreen();
+
+      // 2. Set Footer Year
+      document.getElementById('currentYearSpan').textContent = new Date().getFullYear();
+
+      // 3. Initial Session Check & Render
+      refreshSessionAndInterface();
+      updateCartTrayUI();
+      lucide.createIcons();
+
+      // 4. Live Clock Sync Interval (1 second)
+      setInterval(refreshSessionAndInterface, 1000);
+    });
+  </script>
+</body>
+</html>
